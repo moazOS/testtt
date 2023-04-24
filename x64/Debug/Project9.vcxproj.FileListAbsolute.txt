@@ -1,0 +1,5 @@
+D:\sfml\Project9\x64\Debug\Project9.vcxproj.AssemblyReference.cache
+D:\sfml\Project9\x64\Debug\Project9.vcxproj.SuggestedBindingRedirects.cache
+D:\sfml\Project9\x64\Debug\Project9.exe
+D:\sfml\Project9\x64\Debug\Project9.MyForm.resources
+D:\sfml\Project9\x64\Debug\Project9.vcxproj.GenerateResource.cache
