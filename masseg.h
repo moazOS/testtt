@@ -11,30 +11,30 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
-
+std::vector<std::string> temp;
 std::vector<std::string> lstack;
 	public ref class masseg
 	{
-		
+		int check;
 	    String^ resala;
 		public:System::Windows::Forms::Button^ favorit;
 		public:System::Windows::Forms::Button^ deleteFromeFavorit;
 		public:System::Windows::Forms::Label^ text;
 
 
-	public: masseg(String^ mass, int y )
+	public: masseg(String^ mass, int y , int x , int y2 , int check)
 	{
-		
+		this->check = check;
 		resala = mass;
 		text = (gcnew System::Windows::Forms::Label());
 		text->AutoSize = true;
-		text->Location = System::Drawing::Point(573, 9 * y);
+		text->Location = System::Drawing::Point(x, y2 + y);
 		text->Name = mass;
 		text->Size = System::Drawing::Size(35, 20);
 		text->TabIndex = 1;
 		text->Text = mass;
 		favorit = (gcnew System::Windows::Forms::Button());
-		favorit->Location = System::Drawing::Point(500, 9 * y);
+		favorit->Location = System::Drawing::Point(x-73, y2 + y);
 		favorit->Name = L"star";
 		favorit->Size = System::Drawing::Size(40, 20);
 		favorit->TabIndex = 0;
@@ -42,7 +42,7 @@ std::vector<std::string> lstack;
 		favorit->UseVisualStyleBackColor = true;
 		favorit->Click += gcnew System::EventHandler(this, &masseg::ADD);
 		deleteFromeFavorit = (gcnew System::Windows::Forms::Button());
-		deleteFromeFavorit->Location = System::Drawing::Point(485, 9 * y);
+		deleteFromeFavorit->Location = System::Drawing::Point(x-90, y2 + y);
 		deleteFromeFavorit->Name = L"X";
 		deleteFromeFavorit->Size = System::Drawing::Size(15, 20);
 		deleteFromeFavorit->TabIndex = 0;
@@ -68,15 +68,30 @@ std::vector<std::string> lstack;
 		for (auto i = lstack.begin(); i != lstack.end(); ++i)
 
 		{
-			std::string j = *i;
-			String^ ID = gcnew String(j.c_str());
+			
+			String^ ID = gcnew String((*i).c_str());
 			if (ID->Equals(resala))
 			{
 				lstack.erase(i);
 			}
 			
 		}
+		for (auto i = temp.begin(); i != temp.end(); ++i)
+
+		{
+
+			String^ ID = gcnew String((*i).c_str());
+			if (ID->Equals(resala))
+			{
+				temp.erase(i);
+			}
+
+		}
 		deleteFromeFavorit->Hide();
+		if (check == 1)
+		{
+			text->Hide();
+		}
 
 	}
 
