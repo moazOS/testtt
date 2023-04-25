@@ -18,6 +18,7 @@ Class masseg: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.Windows.Forms.Button favorit : Public
+    System.Windows.Forms.Button deleteFromeFavorit : Public
     System.Windows.Forms.Label text : Public
 Class Project9.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

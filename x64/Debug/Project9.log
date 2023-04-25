@@ -1,4 +1,4 @@
 ﻿  MyForm.cpp
-D:\sfml\Project9\MyForm.cpp(7,1): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+D:\sfml\Project9\MyForm.cpp(10,1): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
   MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Project9.vcxproj -> D:\sfml\Project9\x64\Debug\Project9.exe
