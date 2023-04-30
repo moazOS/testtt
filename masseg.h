@@ -65,25 +65,25 @@ std::vector<std::string> lstack;
 	private: System::Void remove(System::Object^ sender, System::EventArgs^ e)
 	{
 		favorit->Text = L"star";
-		for (auto i = lstack.begin(); i != lstack.end(); ++i)
+		for (int i = 0; i < lstack.size(); i++)
 
 		{
-			
-			String^ ID = gcnew String((*i).c_str());
-			if (ID->Equals(resala))
+
+			String^ deleted_message = gcnew String((lstack[i]).c_str());
+			if (deleted_message->Equals(resala))
 			{
-				lstack.erase(i);
+				lstack.erase(lstack.begin() + i);
 			}
-			
+
 		}
-		for (auto i = temp.begin(); i != temp.end(); ++i)
+		for (int i = 0; i < temp.size(); i++)
 
 		{
 
-			String^ ID = gcnew String((*i).c_str());
-			if (ID->Equals(resala))
+			String^ deleted_message = gcnew String((temp[i]).c_str());
+			if (deleted_message->Equals(resala))
 			{
-				temp.erase(i);
+				temp.erase(temp.begin() + i);
 			}
 
 		}
@@ -94,6 +94,5 @@ std::vector<std::string> lstack;
 		}
 
 	}
-
 
 	};

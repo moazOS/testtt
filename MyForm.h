@@ -102,7 +102,7 @@ namespace Project9 {
 			this->Myfavorit->Name = L"Myfavorit";
 			this->Myfavorit->Size = System::Drawing::Size(91, 26);
 			this->Myfavorit->TabIndex = 3;
-			this->Myfavorit->Text = L"Myfavorit";
+			this->Myfavorit->Text = L"Myfavourite";
 			this->Myfavorit->UseVisualStyleBackColor = true;
 			this->Myfavorit->Click += gcnew System::EventHandler(this, &MyForm::Myfavorit_Click);
 			// 
@@ -176,8 +176,9 @@ namespace Project9 {
 		this->Controls->Add(b.text);
 		y += 20;
 
-
+		
 	}
+		   
 
 
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -185,7 +186,10 @@ namespace Project9 {
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void Myfavorit_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 	panel1->Show();
+	this->panel1->Controls->Add(this->button2);
+	this->panel1->Controls->Add(this->label1);
 	for (auto i = lstack.begin(); i != lstack.end(); ++i)
 	{
 		temp.push_back(*i);
@@ -205,7 +209,10 @@ private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ 
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	panel1->Controls->Clear();
 	this->panel1->Hide();
+	
 	y2 = 1;
 	for (auto i = temp.begin(); i != temp.end(); ++i)
 	{
